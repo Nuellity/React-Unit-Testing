@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Counter } from "./components/counter/Counter";
+import { CounterTwo } from "./components/counter-two/CounterTwo";
+import { AppProviders } from "./providers/AppProviders";
+import { Application } from "./components/applications/Application";
+import { Skills } from "./components/skills/Skills";
+import { MuiMode } from "./components/mui/MuiMode";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProviders>
+      <div className='App'>
+        <Application />
+        <Skills skills={["HTML", "CSS"]} />
+        <Counter />
+        <CounterTwo count={1} />
+        {/* 
+        <Users /> */}
+        <MuiMode />
+      </div>
+    </AppProviders>
   );
 }
 
